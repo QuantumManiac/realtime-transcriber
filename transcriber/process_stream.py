@@ -25,4 +25,4 @@ def process_stream(stream):
     # Halve all frequency values (No idea why it's double in the first place)
     fourier_freq = [i / 2 for i in fourier_freq]
 
-    return fourier, fourier_freq
+    return data, fourier, fourier_freq
