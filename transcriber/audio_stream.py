@@ -1,14 +1,12 @@
 import pyaudio
+from transcriber.settings import DEVICE_NAME_CONTAINS, RATE, CHUNK_SIZE
 
-CHUNK_SIZE = 4096
-RATE = 44100
-DEVICE_NAME_CONTAINS = 'Realtek'
 INPUT_INDEX = 0
 
 
 def open_audio_stream():
     global INPUT_INDEX
-    
+
     p = pyaudio.PyAudio()
 
     # Find audio input device
