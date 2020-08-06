@@ -1,4 +1,7 @@
+import sys
+
 import pyaudio
+
 from transcriber.settings import DEVICE_NAME_CONTAINS, RATE, CHUNK_SIZE
 
 INPUT_INDEX = 0
@@ -18,6 +21,10 @@ def open_audio_stream():
 
         if 'Microphone' in device_name and DEVICE_NAME_CONTAINS in device_name:
             INPUT_INDEX = i
+            break
+    else:
+        print(f"Input device with name containing \"{DEVICE_NAME_CONTAINS}\" not found.")
+        sys.exit()
 
     # Create stream
     return p.open(

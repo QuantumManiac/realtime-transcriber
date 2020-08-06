@@ -1,6 +1,7 @@
 import numpy as np
-from transcriber.settings import CHUNK_SIZE, RATE
 from scipy.fftpack import fft, fftfreq
+
+from transcriber.settings import CHUNK_SIZE, RATE
 
 
 def process_stream(stream):
